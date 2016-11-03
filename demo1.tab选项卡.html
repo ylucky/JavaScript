@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab选项卡</title>
+	<style>
+		.block{display: block;}
+		.none{display: none}
+		.active{background: yellow;}
+		div{
+			border:solid 1px #ccc;
+			width: 300px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<input class="active" type="button" value="语文"/>
+	<input type="button" value="英语"/>
+	<input type="button" value="数学"/>
+	<input type="button" value="历史"/>
+	<div>我是语文课</div>
+	<div class="none">我是英语</div>
+	<div class="none">我是数学</div>
+	<div class="none">我是历史课</div>
+	<script>
+		window.onload=function(){
+			var oBtn = document.getElementsByTagName('input');
+			var oDiv = document.getElementsByTagName('div');
+			for (var i = 0; i < oBtn.length; i++) {
+				oBtn[i].index=i;
+				oBtn[i].onclick = function(){
+					for (var i = 0; i < oBtn.length; i++) {
+						oBtn[i].className='';
+						oDiv[i].className="none";
+					}
+					this.className='active';
+					oDiv[this.index].className="block";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

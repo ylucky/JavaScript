@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	#tab{
+		margin:0 auto;
+		width: 300px;
+		border:solid 1px #ccc;
+	}
+	ul{
+		width: 300px;
+		height: 400px;
+	}
+	ul li{
+		list-style-type: none;
+		float: left;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+	}
+	#content{
+		background: #f30;
+		height: 100px;
+	}
+	.active{
+		background: #f30;
+	}
+	</style>
+</head>
+<body>
+	<div id="tab">
+		<ul>
+			<li class="active">
+				<h2>1</h2>
+				<p>1啦啦啦</p>
+			</li>
+			<li>
+				<h2>2</h2>
+				<p>2啦啦啦</p>
+			</li>
+			<li>
+				<h2>3</h2>
+				<p>3啦啦啦</p>
+			</li>
+			<li>
+				<h2>4</h2>
+				<p>4啦啦啦</p>
+			</li>
+			<li>
+				<h2>5</h2>
+				<p>5啦啦啦</p>
+			</li>
+			<li>
+				<h2>6</h2>
+				<p>6啦啦啦</p>
+			</li>
+			<li>
+				<h2>7</h2>
+				<p>7啦啦啦</p>
+			</li>
+			<li>
+				<h2>8</h2>
+				<p>8啦啦啦</p>
+			</li>
+			<li>
+				<h2>9</h2>
+				<p>9啦啦啦</p>
+			</li>
+			<li>
+				<h2>10</h2>
+				<p>10啦啦啦</p>
+			</li>
+			<li>
+				<h2>11</h2>
+				<p>11啦啦啦</p>
+			</li>
+			<li>
+				<h2>12</h2>
+				<p>12啦啦啦</p>
+			</li>
+		</ul>
+		<div id="content">
+			<h2>1</h2>
+			<p>1啦啦啦</p>
+		</div>
+	</div>
+	<script>
+		window.onload=function(){
+			var oTab = document.getElementById("tab");
+			var oLi = document.getElementsByTagName('li');
+			var oContent=document.getElementById('content');
+
+			for (var i = 0; i < oLi.length; i++) {
+					oLi[i].onmouseover = function(){
+						oLi[i].index=i;
+						for (var i = 0; i < oLi.length; i++) {
+							oLi[i].className='';
+						}
+						this.className='active';
+						oContent.innerHTML=this.innerHTML;
+					}
+				}	
+		}
+
+	</script>
+</body>
+</html>

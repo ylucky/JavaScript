@@ -108,12 +108,33 @@ tBodies 取body
 tHead 取头
 tFoot 取尾
 rows 行
-cols 单元格
+cols  列
+cells 单元格
 
-搜索
+innerHTML
+
+
+##搜索
+toLowerCase 忽略大小写
+search 返回所搜索字符串出现的位置 或者返回-1（没找到） 模糊搜索
+split
+
+##筛选
+设置选中项的display
 
 排序
+removeChild
+appendChild  从原有父级删掉，然后添加到新的父级
 
 #表单 
 验证 
+阻止事件 onkeyup onsubmit onblur
+
+
+正则
+手机号码  
+"(^(0[0-9]{2,3}-)?[0-9]{7,8}$)|(^1[3|4|5|7|8][0-9]{9}$)|(^1[3|4|5|7|8][0-9][\\*]{4}[0-9]{4}$)"
+传真号码
+"^(\\d{3,4}-)?\\d{7,8}$"
+
 ```

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	      <script>
+            if(window.localStorage){
+            	 console.log("浏览器支持localStorage");
+             
+             }else{
+             	console.log("浏览器支持localStorage");
+             }
+             /*localStorage的写入*/
+            var storage=window.localStorage;
+             storage["a"]=1;   //写入a字段
+             storage.b=2;   //写入b字段
+             storage.setItem("c",3);   //写入c字段
+             console.log(typeof storage["a"]);  //string
+             console.log(typeof storage["b"]);  //string
+             console.log(typeof storage["c"]);  //string
+             /*localStorage的读取*/
+            var a=storage.a;
+             console.log(a);  //1
+            var b=storage["b"];
+             console.log(b);  //2
+            var c=storage.getItem("c");
+            console.log(c);//3
+            //localStorage的删除
+            //storage.clear();  //将localStorage的所有内容清除
+
+             storage.a=1;
+             storage.setItem("c",3);
+             for(var i=0;i<storage.length;i++){
+             var key = storage.key(i);
+             console.log(key);  //a  c
+         	}
+      </script>  
+</body>
+</html>

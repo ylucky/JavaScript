@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+            <button id="clear">清除</button>
+             
+	      <script>
+            if(window.localStorage){
+            	 console.log("浏览器支持localStorage");
+             
+             }else{
+             	console.log("浏览器支持localStorage");
+             }
+             /*localStorage的写入*/
+             window.onload=function(){
+               aaa();
+               document.getElementById("clear").onclick=function(){
+                     console.log("clear");
+                     //localStorage的删除
+                     console.log(window.localStorage);
+                     window.localStorage.clear();  //将localStorage的所有内容清除
+                }   
+             }
+             console.log(document);
+             document.write('<scri'+'pt src="init.js"></scri'+'pt>');
+            </script>
+</body>
+</html>

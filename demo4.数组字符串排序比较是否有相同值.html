@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var aString1 = ["pEDEp8M", "7aramj9"];
+		var aString2 = ["7aramj9", "pEDEp8M", "PDxDmr1"];
+		console.log(aString1.sort());
+		console.log(aString2.sort());
+		var result = [];
+		for (var i = 0; i < aString1.length; i++) {
+			for (var j = 0; j < aString2.length; j++) {
+				if(aString2[j]==aString1[i]){
+					result.push(aString2[j])
+				}
+			}
+		}
+		console.log(result);
+
+		/*Array.ExistsSameValues = function(a1, a2) {
+		    var exists = false;
+		    if(a1 instanceof Array && a2 instanceof Array)
+		    {
+		        for (var i=0,iLen=a1.length; i<iLen; i++)
+		        {
+		            for (var j=0,jLen=a2.length; j<jLen; j++)
+		            {
+		                if (a1[i]===a2[j])
+		                {
+		                    return a1[i];
+		                }
+		            }
+		        }
+		    }
+		    return exists;
+		};
+		 
+		var a1 = [1, 2, 5, 8];
+		var a2 = [3, 1, 9, 5];
+		 
+		alert(Array.ExistsSameValues(a1, a2));*/
+	</script>
+</body>
+</html>

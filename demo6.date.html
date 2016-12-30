@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: "MicroSoft YaHei";
+        font-size: 14px;
+    }
+    
+    span {
+        height: 30px;
+        line-height: 30px;
+    }
+    
+    img {
+        display: inline-block;
+        width: 25px;
+        height: 30px;
+    }
+    </style>
+</head>
+
+<body>
+    当前时间是：<span id="showtime"></span>
+    <script>
+    window.onload = function() {
+        function timef() {
+            var time = new Date();
+            time = toForMat(time);
+            document.getElementById("showtime").innerHTML = time;
+        }
+        timef();
+        window.setInterval(timef, 1000);
+
+        function img(num) {
+            switch (num) {
+                case '0':
+                    num = "<img src='img/0.png' alt='num'/>";
+                    break;
+                case '1':
+                    num = "<img src='img/1.png' alt='num'/>";
+                    break;
+                case '2':
+                    num = "<img src='img/2.png' alt='num'/>";
+                    break;
+                case '3':
+                    num = "<img src='img/3.png' alt='num'/>";
+                    break;
+                case '4':
+                    num = "<img src='img/4.png' alt='num'/>";
+                    break;
+                case '5':
+                    num = "<img src='img/5.png' alt='num'/>";
+                    break;
+                case '6':
+                    num = "<img src='img/6.png' alt='num'/>";
+                    break;
+                case '7':
+                    num = "<img src='img/7.png' alt='num'/>";
+                    break;
+                case '8':
+                    num = "<img src='img/8.png' alt='num'/>";
+                    break;
+                case '9':
+                    num = "<img src='img/9.png' alt='num'/>";
+                    break;
+            }
+            return num;
+        }
+
+        function match(val) {
+            let avalue = val.toString().split("");
+            val = "";
+            for (var i = 0; i < avalue.length; i++) {
+                val += img(avalue[i]);
+            }
+            return val;
+        }
+
+        function toForMat(date) {
+            let colone = ":";
+            let line = "-";
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+            let hour = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            if (month >= 0 && month <= 9) {
+                month = "0" + month;
+            }
+            if (day >= 0 && day <= 9) {
+                day = "0" + day;
+            }
+            if (hour >= 0 && hour <= 9) {
+                hour = "0" + hour;
+            }
+            if (minutes >= 0 && minutes <= 9) {
+                minutes = "0" + minutes;
+            }
+            if (seconds >= 0 && seconds <= 9) {
+                seconds = "0" + seconds;
+            }
+            year = match(year);
+            month = match(month);
+            day = match(day);
+            hour = match(hour);
+            minutes = match(minutes);
+            seconds = match(seconds);
+            let result = year + "年" + month + "月" + day + "日" + hour + colone + minutes + colone + seconds;
+            return result;
+        }
+
+    }
+    </script>
+</body>
+
+</html>
